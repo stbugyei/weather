@@ -32,7 +32,7 @@ class CountriesWeather extends Component {
 
     //========= An async and wait function to display default weather =========
 
-     displayDefaultWeather = async () => {
+    displayDefaultWeather = async () => {
         const weatherApi = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=helsinki,finland&appid=${API_KEY}&units=metric`);
         const data = await weatherApi.json();
         this.setState({
@@ -46,7 +46,7 @@ class CountriesWeather extends Component {
             humidity: data.main.humidity,
             description: data.weather[0].description,
             error: "",
-            loading:false
+            loading: false
         });
     }
 
@@ -94,7 +94,7 @@ class CountriesWeather extends Component {
                 humidity: data.main.humidity,
                 description: data.weather[0].description,
                 error: "",
-                loading:true
+                loading: true
             });
         }
         else
@@ -110,7 +110,7 @@ class CountriesWeather extends Component {
                 humidity: '',
                 description: '',
                 error: "Please enter the correct city or country",
-                loading:true
+                loading: true
             });
 
     }
@@ -118,12 +118,16 @@ class CountriesWeather extends Component {
 
         return (
             <div>
-                <div className='wrapper_banner'>
-                    <HeaderBanner {...this.state} />
-                    <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
-                    <DisplayWeather  {...this.state} />
-                </div>
-                { this.state.loading ? <Spinner /> : <DisplayCountries {...this.state} />}             
+                {this.state.loading ? <Spinner /> :
+                    <>
+                    <div className='wrapper_banner'>
+                        <HeaderBanner {...this.state} />
+                        <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
+                        <DisplayWeather  {...this.state} />
+                    </div>
+                    <DisplayCountries {...this.state} />
+                    </>
+                }
             </div>
 
         );
