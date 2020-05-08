@@ -1,8 +1,7 @@
 import React from 'react'
-import Spinner from './Spinner'
 
 
-function DisplayCountries({ countries, searchCountry, loading }) {
+function DisplayCountries({ countries, searchCountry }) {
 
     let name = 'Name:',
         capital = 'Capital:',
@@ -20,19 +19,16 @@ function DisplayCountries({ countries, searchCountry, loading }) {
     //========= Displaying the SearchCountriesOptions =========  
 
     const ShowCountriesList = SearchCountriesOptions.map(country => (
-        <>
-            {loading ? <Spinner /> : <div className='container_first--item'
-                key={country.name}>
-                <img style={img} src={country.flag} alt='' />
-                <p>{name} {country.name} </p>
-                <p>{capital} {country.capital}</p>
-                <p>{language} {`${country.languages.map(l => `${l.name}`)}`}</p>
-                <p>{population} {country.population.toLocaleString('en-US')}</p>
-                <p>{currency} {`${country.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(' ,')}`}</p>
-                <p>{time} {country.timezones} </p>
-            </div>}
-        </>
-
+        <div className='container_first--item'
+            key={country.name}>
+            <img style={img} src={country.flag} alt='' />
+            <p>{name} {country.name} </p>
+            <p>{capital} {country.capital}</p>
+            <p>{language} {`${country.languages.map(l => `${l.name}`)}`}</p>
+            <p>{population} {country.population.toLocaleString('en-US')}</p>
+            <p>{currency} {`${country.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(' ,')}`}</p>
+            <p>{time} {country.timezones} </p>
+        </div>
     ))
 
 

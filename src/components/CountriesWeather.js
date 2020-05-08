@@ -3,6 +3,7 @@ import HeaderBanner from './HeaderBanner';
 import Form from './Form';
 import DisplayCountries from './DisplayCountries';
 import DisplayWeather from './DisplayWeather';
+import Spinner from './Spinner'
 
 
 //const API_KEY = "b2ef7b3ccbdb6c1a8cfc6cc6b959fd92";
@@ -122,7 +123,8 @@ class CountriesWeather extends Component {
                     <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
                     <DisplayWeather  {...this.state} />
                 </div>
-                <DisplayCountries  {...this.state} />
+                { this.state.loading ? <Spinner /> :  <DisplayCountries  {...this.state} />}
+              
             </div>
 
         );
