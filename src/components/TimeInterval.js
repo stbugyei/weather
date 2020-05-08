@@ -1,0 +1,34 @@
+import React, { Component } from "react";
+
+  
+class displayDateTime extends Component {
+  
+    constructor() {
+       super();
+       this.state = {
+       curTime: null
+       }
+  }
+  
+  componentDidMount() {
+       setInterval( 
+         () => this.getTime(), 1000) 
+  }
+
+  getTime() {
+    const months = ["JANUARY", "FEBUARY", "MARCH","APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+      let currentDate = new Date()
+    let formatedDate = currentDate.getDate() + "-" + months[currentDate.getMonth()] + "-" + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes() + ':' + currentDate.getSeconds();
+    this.setState({ curTime: formatedDate })
+
+  }
+    render() {
+         return(
+           <div>
+             {this.state.curTime}
+           </div>
+         );
+       }
+}
+     
+export default displayDateTime;
