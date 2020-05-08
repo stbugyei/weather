@@ -117,19 +117,15 @@ class CountriesWeather extends Component {
     render() {
 
         return (
-            <div>
-                {this.state.loading ? <Spinner /> :
-                    <>
-                    <div className='wrapper_banner'>
-                        <HeaderBanner {...this.state} />
-                        <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
-                        <DisplayWeather  {...this.state} />
-                    </div>
-                    <DisplayCountries {...this.state} />
-                    </>
-                }
-            </div>
 
+            <>
+                <div className='wrapper_banner'>
+                    <HeaderBanner {...this.state} />
+                    <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
+                    <DisplayWeather  {...this.state} />
+                </div>
+                <DisplayCountries {...this.state} />
+            </>
         );
     }
 }
