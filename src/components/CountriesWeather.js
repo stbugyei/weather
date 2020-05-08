@@ -123,7 +123,8 @@ class CountriesWeather extends Component {
                     <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
                     <DisplayWeather  {...this.state} />
                 </div>
-                { this.state.loading ? <Spinner /> :  <DisplayCountries  {...this.state} />}
+                {/* { this.state.loading ? <Spinner /> :  <DisplayCountries  {...this.state} />} */}
+              <DisplayCountries  {...this.state} />
               
             </div>
 
