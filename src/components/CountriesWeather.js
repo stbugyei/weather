@@ -94,7 +94,7 @@ class CountriesWeather extends Component {
                 humidity: data.main.humidity,
                 description: data.weather[0].description,
                 error: "",
-                loading:false
+                loading:true
             });
         }
         else
@@ -110,7 +110,7 @@ class CountriesWeather extends Component {
                 humidity: '',
                 description: '',
                 error: "Please enter the correct city or country",
-                loading:false
+                loading:true
             });
 
     }
@@ -123,9 +123,7 @@ class CountriesWeather extends Component {
                     <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
                     <DisplayWeather  {...this.state} />
                 </div>
-                {/* { this.state.loading ? <Spinner /> :  <DisplayCountries  {...this.state} />} */}
-              <DisplayCountries  {...this.state} />
-              
+                { this.state.loading ? <Spinner /> : <DisplayCountries {...this.state} />}             
             </div>
 
         );
