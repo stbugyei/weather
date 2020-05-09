@@ -1,6 +1,0 @@
-[[redirects]]
-const API_KEY = "b025832c52f17370a6893bceec8d291e";
-from= "https://countryandweather.netlify.app/"
-to = "http://api.openweathermap.org/data/2.5/weather?q=helsinki,finland&appid=b025832c52f17370a6893bceec8d291e&units=metric`"
-status = 200
-force = true
