@@ -80,7 +80,7 @@ class CountriesWeather extends Component {
         const country = e.target.elements.country.value;
 
         if (city) {
-            const weatherApi = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
+            const weatherApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
             const data = await weatherApi.json();
 
             this.setState({
