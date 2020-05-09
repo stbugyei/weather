@@ -3,7 +3,7 @@ import HeaderBanner from './HeaderBanner';
 import Form from './Form';
 import DisplayCountries from './DisplayCountries';
 import DisplayWeather from './DisplayWeather';
-import Spinner from './Spinner'
+
 
 
 //const API_KEY = "b2ef7b3ccbdb6c1a8cfc6cc6b959fd92";
@@ -53,7 +53,7 @@ class CountriesWeather extends Component {
     //========= mounting component to fetch data from the country and weather API's =========
 
     componentDidMount() {
-        this.displayDefaultWeather();
+        // this.displayDefaultWeather();
         fetch(countryApi)
             .then(response => response.json())
             .then(data => {
