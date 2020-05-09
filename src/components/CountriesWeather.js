@@ -3,6 +3,7 @@ import HeaderBanner from './HeaderBanner';
 import Form from './Form';
 import DisplayCountries from './DisplayCountries';
 import DisplayWeather from './DisplayWeather';
+import Spinner from './Spinner'
 
 
 
@@ -47,19 +48,21 @@ class CountriesWeather extends Component {
             humidity: data.main.humidity,
             description: data.weather[0].description,
             error: "",
-            loading: false
+           // loading: false
         });
     }
 
     //========= mounting component to fetch data from the country and weather API's =========
 
     componentDidMount() {
-       this.displayDefaultWeather();
+     //   this.displayDefaultWeather();
+      // this.setState({ loading: false});
         fetch(countryApi)
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    countries: data
+                    countries: data,
+                    loading: false
                 })
             })
     };
@@ -95,7 +98,7 @@ class CountriesWeather extends Component {
                 humidity: data.main.humidity,
                 description: data.weather[0].description,
                 error: "",
-                loading: true
+               // loading: true
             });
         }
         else
@@ -111,14 +114,19 @@ class CountriesWeather extends Component {
                 humidity: '',
                 description: '',
                 error: "Please enter the correct city or country",
-                loading: true
+              //  loading: true
             });
 
     }
     render() {
 
-        return (
+        const { loading } = this.state;
+        if (loading) {
+            return <Spinner/>;
+          }
 
+        return (
+          
             <>
                 <div className='wrapper_banner'>
                     <HeaderBanner {...this.state} />
