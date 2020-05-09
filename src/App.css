@@ -263,8 +263,78 @@ visibility: hidden;
 }
 
 /*
-==== spinner ====
+==== spinnerFull ====
 */
+.spin-position{
+ background: rgb(136, 177, 201);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spin {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100px;
+ height: 100px;
+ color: rgb(9, 37, 9);
+}
+
+.spin-sector {
+ border-radius: 50%;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ border: 8px solid transparent;
+ mix-blend-mode: overlay;
+}
+
+.spin-text {
+ animation: loading-opacity 3s ease-in-out infinite;
+ font-size: 1em;
+}
+
+.spin-sector-first {
+ animation: rotates 2s ease-in infinite;
+ border-top: 10px solid #F93822FF;
+}
+
+.spin-sector-second {
+ animation: rotates 2.5s ease-in-out infinite;
+ border-bottom: 10px solid rgb(238, 217, 126);
+}
+
+.spin-sector-third {
+ animation: rotates 1.5s ease-in-out infinite;
+ border-top: 10px solid #006B38FF;
+}
+
+@keyframes rotates {
+ from { transform: rotate(0deg); }
+ to { transform: rotate(360deg); }
+}
+
+@keyframes loading-opacity {
+ 0%, 100% {
+     opacity: 1;
+ }
+ 25%, 75% {
+     opacity: .5;
+ }
+ 50% {
+     opacity: .1;
+ }
+}
+
+
+/*
+==== spinner ===
+*/
+
 .spinner-position{
   display: flex;
   justify-content: center;
@@ -325,66 +395,6 @@ visibility: hidden;
  }
 }
 
-/*.spinner-position{
-  display: flex;
-  justify-content: center;
-}
-
-.spinner {
- position: relative;
- display: flex;
- justify-content: center;
- align-items: center;
- width: 100px;
- height: 100px;
-}
-
-.spinner-sector {
- border-radius: 50%;
- position: absolute;
- width: 50%;
- height: 50%;
- border: 1px solid transparent;
- mix-blend-mode: overlay;
-}
-
-.spinner-text {
- animation: loading-opacity 3s ease-in-out infinite;
- font-size: 0.5em;
-}
-
-.spinner-sector-blue {
- animation: rotates 2s ease-out infinite;
- border-top: 8px solid #1b2945;
-}
-
-.spinner-sector-orange {
- animation: rotates 2.5s ease-in infinite;
- border-bottom: 8px solid #fd7e14;
-}
-
-.spinner-sector-lightblue {
- animation: rotates 1.5s ease-in-out infinite;
- border-top: 8px solid rgba(27, 41, 69, 0.75);
-}
-
-@keyframes rotates {
- from { transform: rotate(0deg); }
- to { transform: rotate(360deg); }
-}
-
-@keyframes loading-opacity {
- 0%, 100% {
-     opacity: 1;
- }
- 25%, 75% {
-     opacity: .5;
- }
- 50% {
-     opacity: .1;
- }
-}
-*/
 
 
 

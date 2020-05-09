@@ -3,7 +3,8 @@ import HeaderBanner from './HeaderBanner';
 import Form from './Form';
 import DisplayCountries from './DisplayCountries';
 import DisplayWeather from './DisplayWeather';
-import Spinner from './Spinner'
+import Spinner from './SpinnerFull'
+import SpinnerFull from './SpinnerFull';
 
 
 
@@ -122,7 +123,7 @@ class CountriesWeather extends Component {
 
         const { loading } = this.state;
         if (loading) {
-            return <Spinner/>;
+            return <SpinnerFull/>;
           }
 
         return (
