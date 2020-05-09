@@ -39,7 +39,8 @@ function DisplayWeather({ icon,
                         <div className='temperature'>
                             <p>temperature</p>
                             <span style={temp}>
-                                {loading ? <Spinner /> : <p>{temperature}&#xb0;</p>}
+                             <p>{temperature}&#xb0;</p>
+                                {/* {loading ? <Spinner /> : <p>{temperature}&#xb0;</p>} */}
                             </span>
                         </div>
 
@@ -47,11 +48,13 @@ function DisplayWeather({ icon,
                 </div>
                 <div className='weather-wrapper_content'>
                     <p>humidity</p>
-                    {loading ? <Spinner /> : <p style={pStyle}> {humidity}&#37;</p>}
+                    <p style={pStyle}> {humidity}&#37;</p>
+                    {/* {loading ? <Spinner /> : <p style={pStyle}> {humidity}&#37;</p>} */}
                 </div>
                 <div className='weather-wrapper_content'>
                     <p>city/country</p>
-                    {loading ? <Spinner /> : <p style={pStyle2}>{city} </p>}
+                      <p style={pStyle2}>{city} </p>
+                    {/* {loading ? <Spinner /> : <p style={pStyle2}>{city} </p>} */}
                 </div>
                 <div className='weather-wrapper_content'>
                     <p>country</p>

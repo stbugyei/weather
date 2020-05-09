@@ -53,7 +53,7 @@ class CountriesWeather extends Component {
     //========= mounting component to fetch data from the country and weather API's =========
 
     componentDidMount() {
-        // this.displayDefaultWeather();
+       this.displayDefaultWeather();
         fetch(countryApi)
             .then(response => response.json())
             .then(data => {
