@@ -31,9 +31,10 @@ class CountriesWeather extends Component {
     }
 
     //========= An async and wait function to display default weather =========
+    /* === "https://cors-anywhere.herokuapp.com/" is added to the openweathermap link to enable it load in netlify == */
 
     displayDefaultWeather = async () => {
-        const weatherApi = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=helsinki,finland&appid=${API_KEY}&units=metric`);
+        const weatherApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=helsinki,finland&appid=${API_KEY}&units=metric`);
         const data = await weatherApi.json();
         this.setState({
             icon: data.weather[0].icon,

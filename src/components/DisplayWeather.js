@@ -25,21 +25,21 @@ function DisplayWeather({ icon,
                 </div>
                 <div className='weather-wrapper_content'>
                     <div className='temperature_wrapper'>
-                        
-                    <div className='weather_min-max'>
+
+                        <div className='weather_min-max'>
                             <div>
-                                <p style={{fontSize:'10px'}}>min</p>
+                                <p style={{ fontSize: '10px' }}>min</p>
                                 <p>{temp_min}&#xb0;</p>
                             </div>
                             <div>
-                                <p style={{fontSize:'10px'}}>max</p>
+                                <p style={{ fontSize: '10px' }}>max</p>
                                 <p> {temp_max}&#xb0;</p>
                             </div>
                         </div>
                         <div className='temperature'>
                             <p>temperature</p>
                             <span style={temp}>
-                             <p>{temperature}&#xb0;</p>
+                                <p>{temperature}&#xb0;</p>
                                 {/* {loading ? <Spinner /> : <p>{temperature}&#xb0;</p>} */}
                             </span>
                         </div>
@@ -49,20 +49,18 @@ function DisplayWeather({ icon,
                 <div className='weather-wrapper_content'>
                     <p>humidity</p>
                     <p style={pStyle}> {humidity}&#37;</p>
-                    {/* {loading ? <Spinner /> : <p style={pStyle}> {humidity}&#37;</p>} */}
                 </div>
                 <div className='weather-wrapper_content'>
                     <p>city/country</p>
-                      <p style={pStyle2}>{city} </p>
-                    {/* {loading ? <Spinner /> : <p style={pStyle2}>{city} </p>} */}
+                    <p style={pStyle2}>{city} </p>
                 </div>
                 <div className='weather-wrapper_content'>
                     <p>country</p>
-                    {loading ? <Spinner /> : <p style={pStyle}>{country} </p>}
+                    <p style={pStyle}>{country} </p>
                 </div>
                 <div className='weather-wrapper_content'>
                     <p>description</p>
-                    {loading ? <Spinner /> : <p style={pStyle2}> {description}</p>}
+                    <p style={pStyle2}> {description}</p>
                 </div>
                 <p>{error}</p>
             </div>
