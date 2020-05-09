@@ -3,7 +3,6 @@ import HeaderBanner from './HeaderBanner';
 import Form from './Form';
 import DisplayCountries from './DisplayCountries';
 import DisplayWeather from './DisplayWeather';
-import Spinner from './SpinnerFull'
 import SpinnerFull from './SpinnerFull';
 
 
