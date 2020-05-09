@@ -39,7 +39,8 @@ function DisplayWeather({ icon,
                         <div className='temperature'>
                             <p>temperature</p>
                             <span style={temp}>
-                                {loading ? <Spinner /> : <p>{temperature}&#xb0;</p>}
+                                {/* {loading ? <Spinner /> : <p>{temperature}&#xb0;</p>} */}
+                           <p>{temperature}&#xb0;</p>
                             </span>
                         </div>
 
