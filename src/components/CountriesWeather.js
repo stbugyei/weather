@@ -55,8 +55,7 @@ class CountriesWeather extends Component {
     //========= mounting component to fetch data from the country and weather API's =========
 
     componentDidMount() {
-     this.displayDefaultWeather();
-      // this.setState({ loading: false});
+    // this.displayDefaultWeather();
         fetch(countryApi)
             .then(response => response.json())
             .then(data => {
@@ -85,21 +84,26 @@ class CountriesWeather extends Component {
 
         if (city) {
             const weatherApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
-            const data = await weatherApi.json();
-
-            this.setState({
-                icon: data.weather[0].icon,
-                temp_min: (data.main.temp_min).toFixed(),
-                temp_max: (data.main.temp_max).toFixed(),
-                temperature: (data.main.temp).toFixed(),
-                clear: data.weather[0].main,
-                city: data.name,
-                country: data.sys.country,
-                humidity: data.main.humidity,
-                description: data.weather[0].description,
-                error: "",
-               // loading: true
-            });
+            try {
+                const data = await weatherApi.json();
+                this.setState({
+                    icon: data.weather[0].icon,
+                    temp_min: (data.main.temp_min).toFixed(),
+                    temp_max: (data.main.temp_max).toFixed(),
+                    temperature: (data.main.temp).toFixed(),
+                    clear: data.weather[0].main,
+                    city: data.name,
+                    country: data.sys.country,
+                    humidity: data.main.humidity,
+                    description: data.weather[0].description,
+                    error: "",
+                   // isloading: false
+                });
+            } catch (error) {
+                this.setState({
+                    error:`WEATHER DETAILS FOR ${city}${country} CANNOT BE FOUND`
+                });
+            }
         }
         else
             this.setState({
@@ -113,7 +117,7 @@ class CountriesWeather extends Component {
                 country: '',
                 humidity: '',
                 description: '',
-                error: "Please enter the correct city or country",
+                error: "PLEASE ENTER CITY OR COUNTRY NAME",
               //  loading: true
             });
 

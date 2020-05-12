@@ -35,7 +35,7 @@ function DisplayCountries({ countries, searchCountry }) {
     return (
 
         <div className='container_first'>
-            {ShowCountriesList}
+        {ShowCountriesList}
         </div>
     )
 }
@@ -45,6 +45,6 @@ export default DisplayCountries
 
 const img = {
     width: '100%',
-    paddingBottom: '20px'
+    paddingBottom: '10px'
 };
 
