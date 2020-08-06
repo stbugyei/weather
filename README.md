@@ -4,4 +4,4 @@ The technology used is React.js<br>
 API's used are:
 rescountries<br>
 openweathermap<br>
-https://countryandweather.netlify.app/
+[Demo Link](https://countryandweather.netlify.app/)
