@@ -56,29 +56,20 @@ function DisplayWeather({ icon,
             </div>
             <div className='weather-wrapper_content'>
                 <div className='temperature_wrapper'>
-
-                    <div className='weather_min-max'>
-                        <div>
-                            <p style={{ fontSize: '10px' }}>min</p>
-                            <p>{temp_min}&#xb0;</p>
-                        </div>
-                        <div>
-                            <p style={{ fontSize: '10px' }}>max</p>
-                            <p> {temp_max}&#xb0;</p>
-                        </div>
-                    </div>
                     <div className='temperature'>
                         <p>temperature</p>
                         <span style={temp}>
                             {loading ? <Spinner /> : <p>{temperature}°C</p>}
                         </span>
+                        <p style={{ fontSize: '14px' }}>{temp_min}°C -  {temp_max}°C</p>
+                        <p style={{ fontSize: '10px' }}>min - max</p>
                     </div>
 
                 </div>
             </div>
             <div className='weather-wrapper_content'>
                 <p>humidity</p>
-                {loading ? <Spinner /> : <p style={pStyle}> {humidity}&#37;</p>}
+                {loading ? <Spinner /> : <p style={pStyle}> {humidity}%</p>}
 
             </div>
             <div className='weather-wrapper_content'>
@@ -104,31 +95,31 @@ function DisplayWeather({ icon,
 export default DisplayWeather
 
 const temp = {
-    fontSize: '70px',
-    textAlign: "right",
-    fontWeight: 'bold',
-    color: 'red',
+    fontSize: '45px',
+    textAlign: "center",
+    fontWeight: '600',
+    color: '#ff0000',
     textShadow: '0 3px 6px rgb(59, 62, 65)'
 
 }
 
 const pStyle = {
-    color: 'white',
-    fontSize: '35px',
+    color: '#fff',
+    fontSize: '25px',
     marginTop: '25px',
     textAlign: 'center',
     textShadow: '0 3px 6px rgb(59, 62, 65)'
 };
 
 const pStyle1 = {
-    color: 'white',
-    fontSize: '30px',
+    color: '#fff',
+    fontSize: '25px',
     textAlign: 'center',
     textShadow: '0 3px 6px rgb(59, 62, 65)'
 };
 
 const pStyle2 = {
-    color: 'red',
+    color: '#ff0000',
     fontSize: '30px',
     marginTop: '30px',
     textAlign: 'center',

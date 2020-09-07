@@ -48,14 +48,14 @@ class CountriesWeather extends Component {
             humidity: data.main.humidity,
             description: data.weather[0].description,
             error: "",
-           // loading: false
+            // loading: false
         });
     }
 
     //========= mounting component to fetch data from the country and weather API's =========
 
     componentDidMount() {
-     this.displayDefaultWeather();
+        //  this.displayDefaultWeather();
         fetch(countryApi)
             .then(response => response.json())
             .then(data => {
@@ -76,11 +76,11 @@ class CountriesWeather extends Component {
         this.setState({ country: value });
     };
 
-    // ========================= HandleClick event to display weather base search criterea ================================
+    // ========================= HandleClick event to display weather base on search criterea ================================
     handleOnClick = async (e) => {
         e.preventDefault();
-        const city = e.target.elements.city.value;
-        const country = e.target.elements.country.value;
+        const city = e.target.city.value;
+        const country = e.target.country.value;
 
         if (city) {
             const weatherApi = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
@@ -97,11 +97,11 @@ class CountriesWeather extends Component {
                     humidity: data.main.humidity,
                     description: data.weather[0].description,
                     error: "",
-                   // isloading: false
+                    // isloading: false
                 });
             } catch (error) {
                 this.setState({
-                    error:`WEATHER DETAILS FOR ${city}${country} CANNOT BE FOUND`
+                    error: `WEATHER DETAILS FOR ${city}${country} CANNOT BE FOUND`
                 });
             }
         }
@@ -118,7 +118,7 @@ class CountriesWeather extends Component {
                 humidity: '',
                 description: '',
                 error: "PLEASE ENTER CITY OR COUNTRY NAME",
-              //  loading: true
+                //  loading: true
             });
 
     }
@@ -126,19 +126,30 @@ class CountriesWeather extends Component {
 
         const { loading } = this.state;
         if (loading) {
-            return <SpinnerFull/>;
-          }
+            return <SpinnerFull />;
+        }
 
         return (
-          
-            <>
-                <div className='wrapper_banner'>
-                    <HeaderBanner {...this.state} />
-                    <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
-                    <DisplayWeather  {...this.state} />
-                </div>
-                <DisplayCountries {...this.state} />
-            </>
+
+            <div className='wrapper'>
+                <section className='banner-section'>
+                    <div className="container">
+                        <div className='banner-wrapper'>
+                            <HeaderBanner {...this.state} />
+                            <div className='form_wrapper' onSubmit={this.handleOnClick} onChange={this.handleOnChange}><Form /></div>
+                            <div className="display_wrapper">
+                                <DisplayWeather  {...this.state} />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='display_countries'>
+                    <div className="container">
+                        <DisplayCountries {...this.state} />
+                    </div>
+                </section>
+            </div>
         );
     }
 }

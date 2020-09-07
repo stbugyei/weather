@@ -8,59 +8,56 @@ import Pinterest from "./images/pinterest.png";
 
 function SocialMedia() {
   return (
-    <div className="footer_bottom">
     <div className="icon_group">
-      <div className="bottom_icons">
+      <div className="media_icons">
         <div className="twitter">
           <a href="https://twitter.com/login">
             <img
-              className="footer_bottom--subimg"
+              className="media-image"
               src={Twitter}
               alt=" "
             />
           </a>
         </div>
       </div>
-      <div className="bottom_icons">
+      <div className="media_icons">
         <div className="facebook">
           <a href="https://en-gb.facebook.com/login/">
             <img
-              className="footer_bottom--subimg"
+              className="media-image"
               src={Facebook}
               alt=" "
             />
           </a>
         </div>
       </div>
-      <div className="bottom_icons">
+      <div className="media_icons">
         <div className="linkedin">
           <a href="https://www.linkedin.com/">
             <img
-              className="footer_bottom--subimg"
+              className="media-image"
               src={Linkedin}
               alt=" "
             />
           </a>
         </div>
       </div>
-
-      <div className="bottom_icons">
+      <div className="media_icons">
         <div className="github">
           <a href="https://github.com/join">
             <img
-              className="footer_bottom--subimg"
+              className="media-image"
               src={Github}
               alt=" "
             />
           </a>
         </div>
       </div>
-
-      <div className="bottom_icons">
+      <div className="media_icons">
         <div className="pinterest">
           <a href="https://www.pinterest.com/">
             <img
-              className="footer_bottom--subimg"
+              className="media-image"
               src={Pinterest}
               alt=" "
             />
@@ -68,7 +65,6 @@ function SocialMedia() {
         </div>
       </div>
     </div>
-  </div>
   )
 }
 

@@ -24,7 +24,7 @@ function HeaderBanner({countries}) {
             </div>
 
             <div style={time}>
-                <div style={time}><TimeInterval /></div>
+                <div><TimeInterval /></div>
                 <div><SocialMedia /></div>
             </div>
         </div>
@@ -34,7 +34,6 @@ function HeaderBanner({countries}) {
 export default HeaderBanner
 
 const time = {
-    marginTop: '10px',
     padding: '10px',
     fontSize: '30px',
     color: 'red'

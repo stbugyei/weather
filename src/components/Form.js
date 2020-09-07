@@ -7,7 +7,7 @@ function Form() {
             <form className="search">
                 <div>
                     <input
-                        type="text"
+                        type="search"
                         name="city"
                         autoComplete='on'
                         placeholder="City/Country" />
@@ -19,7 +19,7 @@ function Form() {
                 <div>
                     <input
                         className="hidecountry"
-                        type="text"
+                        type="search"
                         name="country"
                         placeholder="Country..." />
                 </div>
