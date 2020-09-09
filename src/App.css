@@ -65,6 +65,11 @@ h2.name-font {
 }
 
 @media all and (max-width: 1037px) {
+	
+		.container{
+		width: auto;
+	}
+	
 	.container_first--item {
 		flex-direction: row;
 		flex-wrap: nowrap;
